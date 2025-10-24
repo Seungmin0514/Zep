@@ -31,7 +31,7 @@ public class BaseController : MonoBehaviour
     {
         direction = direction * Speed;
         _rigidbody.velocity = direction;
-
+            
     }
     protected virtual void FixedUpdate()
     {
