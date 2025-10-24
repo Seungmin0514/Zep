@@ -38,5 +38,4 @@ public class BaseController : MonoBehaviour
         Movement(movementDirection);
         
     }
-
 }

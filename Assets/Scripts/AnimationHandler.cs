@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class AnimationHandler : MonoBehaviour
 {
+
+    protected Animator animator;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Awake()
     {
-        
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    
+    void OnMove()
     {
-        
+        animator.SetBool("IsMove",true);
     }
 }
