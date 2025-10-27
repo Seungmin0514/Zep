@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI restartText;
+    public TextMeshProUGUI highScoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,11 @@ public class UIManager : MonoBehaviour
     public void UpdateScore(int score)
     {
         scoreText.text = score.ToString();
+
+    }
+    public void UpdateHighScore(int highScore)
+    {
+        highScoreText.text = highScore.ToString();
     }
     // Update is called once per frame
     void Update()
