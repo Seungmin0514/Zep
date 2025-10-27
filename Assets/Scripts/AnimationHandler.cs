@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AnimationHandler : MonoBehaviour
 {
@@ -13,9 +14,14 @@ public class AnimationHandler : MonoBehaviour
     }
 
     // Update is called once per frame
-    
-    void OnMove()
+
+    public void AnimationCanceled(InputAction.CallbackContext context)
     {
-        animator.SetBool("IsMove",true);
+        animator.SetBool("IsMove", false);
+    }
+    public void AnimationPerformed(InputAction.CallbackContext context)
+    {
+        animator.SetBool("IsMove", true);
+
     }
 }
