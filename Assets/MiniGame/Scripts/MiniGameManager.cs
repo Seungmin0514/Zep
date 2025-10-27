@@ -32,15 +32,15 @@ public class MiniGameManager : MonoBehaviour
     
     private void Init()
     {
-        Debug.Log("¿Œ¥÷");
+       // Debug.Log("¿Œ¥÷");
         uiManager = FindObjectOfType<UIManager>();
     }
 
     private void Start()
     {
         
-        uiManager.UpdateScore(0);
-        uiManager.UpdateHighScore(highScore);
+        //uiManager.UpdateScore(0);
+        //uiManager.UpdateHighScore(highScore);
 
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -53,7 +53,7 @@ public class MiniGameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        Debug.Log("Game Over");
+        //Debug.Log("Game Over");
         HighScoreCheck();
         uiManager.SetReStart();
     }
@@ -62,7 +62,7 @@ public class MiniGameManager : MonoBehaviour
     {
         currentScore = 0;
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MiniGameScene");
         
     }
     public void AddScore(int score)

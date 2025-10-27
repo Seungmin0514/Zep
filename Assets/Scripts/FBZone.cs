@@ -50,7 +50,7 @@ public class FBZone : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)&&FBUI.activeSelf)
         {
-            SceneManager.LoadScene("MiniGameScene");
+            FindObjectOfType<MiniGameManager>().RestartGame();
         }
     }
 
