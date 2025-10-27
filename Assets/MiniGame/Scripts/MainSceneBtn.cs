@@ -8,6 +8,6 @@ public class MainSceneBtn : MonoBehaviour
     
     public void MainSceneLoad()
     {
-        SceneManager.LoadScene("Main");
+        GameManager.Instance.LoadMainScene();
     }
 }

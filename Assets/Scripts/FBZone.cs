@@ -32,8 +32,15 @@ public class FBZone : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
-                FBstartUI.SetActive(false);
-                FBUI.SetActive(false);
+                if (FBstartUI!= null)
+                {
+                    FBstartUI.SetActive(false);
+                }
+                if (FBUI!= null)
+                {
+                    FBUI.SetActive(false);
+                }
+               
                 collision.GetComponent<PlayerController>().playerInput.Player.Use.performed -= OnUseStarted;
                 
             }
@@ -42,7 +49,10 @@ public class FBZone : MonoBehaviour
 
     private void OnUseStarted(InputAction.CallbackContext context)
     {
-        FBUI.SetActive(!FBUI.activeSelf);
+        if (FBstartUI != null)
+        {
+            FBUI.SetActive(!FBUI.activeSelf);
+        }
         
             
     }
@@ -50,7 +60,8 @@ public class FBZone : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)&&FBUI.activeSelf)
         {
-            FindObjectOfType<MiniGameManager>().RestartGame();
+            GameManager.Instance.SavePlayerTransform();
+            MiniGameManager.Instance.RestartGame();
         }
     }
 

@@ -41,7 +41,7 @@ public class Obstacle : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player player = collision.GetComponent<Player>();
+        Plane player = collision.GetComponent<Plane>();
         if(player != null)
         {
             gameManager.AddScore(1);

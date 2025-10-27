@@ -23,7 +23,7 @@ public class PlayerController : BaseController
 
         playerInput.Player.Move.performed += OnMovePerformed;
         playerInput.Player.Move.canceled += OnMoveCanceled;
-        playerInput.Player.Move.started += AnimationHandler.AnimationStarted;
+        playerInput.Player.Move.started  += AnimationHandler.AnimationStarted;
         playerInput.Player.Move.canceled += AnimationHandler.AnimationCanceled;
 
     }
