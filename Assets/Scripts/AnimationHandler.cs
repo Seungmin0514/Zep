@@ -19,7 +19,7 @@ public class AnimationHandler : MonoBehaviour
     {
         animator.SetBool("IsMove", false);
     }
-    public void AnimationPerformed(InputAction.CallbackContext context)
+    public void AnimationStarted(InputAction.CallbackContext context)
     {
         animator.SetBool("IsMove", true);
 

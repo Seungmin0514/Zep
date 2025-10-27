@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : BaseController
 {
-    private PlayerInputControls playerInput;
+    public PlayerInputControls playerInput;
     private AnimationHandler AnimationHandler;
 
     protected override void Awake()
@@ -23,7 +23,7 @@ public class PlayerController : BaseController
 
         playerInput.Player.Move.performed += OnMovePerformed;
         playerInput.Player.Move.canceled += OnMoveCanceled;
-        playerInput.Player.Move.started += AnimationHandler.AnimationPerformed;
+        playerInput.Player.Move.started += AnimationHandler.AnimationStarted;
         playerInput.Player.Move.canceled += AnimationHandler.AnimationCanceled;
 
     }
