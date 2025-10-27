@@ -16,7 +16,7 @@ public class PlayerController : BaseController
         AnimationHandler = GetComponent<AnimationHandler>();
         
     }
-
+    
     private void OnEnable()
     {
         playerInput.Player.Enable();
