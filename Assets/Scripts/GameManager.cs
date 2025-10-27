@@ -41,9 +41,14 @@ public class GameManager : MonoBehaviour
 
     public void LoadMainScene()
     {
-        
+
+        SceneManager.sceneLoaded += OnMainLoaded;
         SceneManager.LoadScene("Main");
     }
-    
+    private void OnMainLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject.FindObjectOfType<MiniGameResult>(true).PopReslut();
+        SceneManager.sceneLoaded -= OnMainLoaded;
+    }
     
 }

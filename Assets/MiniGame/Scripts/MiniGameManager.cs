@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class MiniGameManager : MonoBehaviour
 {
     static MiniGameManager miniGameManager;
-    private int highScore =0;
+    private int highScore = 0;
+    public int HighScore { get { return highScore; } }
     public static MiniGameManager Instance { get { return miniGameManager; } }
 
     private int currentScore = 0;
